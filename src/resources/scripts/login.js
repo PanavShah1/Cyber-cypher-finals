@@ -3,39 +3,51 @@ const CheckUser = () => {
     let password = document.getElementById('password').value;
     let password2 = document.getElementById('password2').value;
     let err = document.getElementById('passwordConfirm');
-    fetch('http://127.0.0.1:8000/new-user', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 'name': "Samanth", 'email:':"samanthmartis@gmail.com", 'password': "1234"}),
-    })
-    .then(data => {
-        console.log(`API data is: ${data.json()}`);
-    //     if( data.outcome == '1' ) {
-    //         console.log("Recieved 1")
-
-
-    // }
-    // else{
-    //     console.log("Recieved 2")
-    // }
-    }
-    )
-    .catch(err => {
-        console.log(err);
-    });
+    
     if(parseInt(email).toString()===email && email.length==10){
         console.log('same');
     
     // console.log( parseInt(email));
         if (password===password2) {
-        console.log(`emailile number is: ${email}\nPassword is: ${password}`)
-        err.innerHTML = "";
+            if (password2.length>=6){
+                    console.log(`emailile number is: ${email}\nPassword is: ${password}`)
+                    err.innerHTML = "";
+
+                    let dataVal = -1;
+                    fetch('http://127.0.0.1:8000/new_user', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 'username': 1, 'password': 1}),
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        
+                        if(data==1){
+                            console.log("User exists")
+                        }
+                        else if(data==0){
+                            console.log("User created");
+                        }
+                        else console.log("Uncaught Error");
+
+
+
+
+                        })
+                    .catch(err => {
+                        console.log(err);
+                    });
+                }
+                else err.innerHTML = "Password too short<br><br>";
+
+
 
         } else {
             
-            err.innerHTML = "passwords must match<br><br>";
+            err.innerHTML = "Passwords must match<br><br>";
             console.log("error");
         }
     } else {
