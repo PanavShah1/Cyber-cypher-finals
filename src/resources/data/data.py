@@ -23,7 +23,6 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 
-test = []
 
 app = FastAPI()
 @app.post("/new-user")
@@ -51,5 +50,22 @@ def index(name:str, email:str, password:str):
     
     
     user_data = {"name" : name, "email" : email, "password" : password}
-    test.append(user_data)
     return 0
+
+@app.post("/login")
+def index(email:str, password:str):
+    sql = """
+        SELECT email, password
+        FROM users
+        """
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+
+    if not validate_email(email):
+        return 2
+
+    for a in myresult:
+        if a[0] == email and a[1] == password:
+            return 0
+
+    return myresult
