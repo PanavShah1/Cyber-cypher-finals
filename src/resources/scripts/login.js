@@ -11,7 +11,7 @@ const CheckUser = () => {
         body: JSON.stringify({ 'name': "Samanth", 'email:':"samanthmartis@gmail.com", 'password': "1234"}),
     })
     .then(data => {
-        console.log(`API data is: ${data}`);
+        console.log(`API data is: ${data.json()}`);
     //     if( data.outcome == '1' ) {
     //         console.log("Recieved 1")
 
