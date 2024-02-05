@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+}
+
+#header{
+    position: fixed;
+    display: flex;
+    /* gap: 50px; */
+    align-self: center;
+    width: 100%;
+    background-color: aqua;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: space-around;
+    height: 8%;
+    /* vertical-align: middle; */
+}
+.headerElement{
+    background-color: antiquewhite;
+}
+#loginOuterContainer{
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    left: 15%;
+    top: 15%;
+    background-color: antiquewhite;
+    
+}
+#loginContainer{
+    position: relative;
+    width: 80%;
+    height:80%;
+    left:10%;
+    top: 10%;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+
+
+
+    background-color: aliceblue;
+}
+.subContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width:50%;
+    text-align:center;
+    /* align-content: center; */
+    justify-content: center;
+
+    /* padding: 100px; */
+    background-color: aqua;
+    
+}
+#formHolder{
+    display: flex;
+    
+    flex-direction: column;
+    background-color: aquamarine;
+}
+form {
+    margin: 10px;
+    align-self: center;
+}
+button{
+    width: 50%;
+    align-self: center;
+}
+span{
+    align-self: center;
+    color: red;
+}
