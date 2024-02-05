@@ -45,7 +45,7 @@ app.add_middleware(
 
 @app.post("/new-user")
 async def index(listmine: dict):
-    name = listmine['name']
+    # name = listmine['name']
     email = listmine['email']
     password = listmine['password']
     # sql = """
@@ -70,7 +70,9 @@ async def index(listmine: dict):
     # mydb.commit()
     
     
-    user_data = {"name" : name, "email" : email, "password" : password}
+    # user_data = {"name" : name, "email" : email, "password" : password}
+    if password == "1234567890":
+        return 1
     return 0
 
 @app.post("/login")
@@ -84,10 +86,15 @@ async def index(mydict: dict):
     # mycursor.execute(sql)
     # myresult = mycursor.fetchall()
 
-    if not validate_email(email):
-        return 2
+    if validate_email(email):
+        if password == "1234":
+            return 1
+        else:
+            return 0
     else:
-        return 1
+        return -1
+    
+
     
 
     # for a in myresult:
