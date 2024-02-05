@@ -14,12 +14,12 @@ const CreateUser = () => {
                     err.innerHTML = "";
 
                     let dataVal = -1;
-                    fetch('http://127.0.0.1:8000/new_user', {
+                    fetch('http://127.0.0.1:8000/new-user', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ 'username': 1, 'password': 1}),
+                    body: JSON.stringify({ 'email': email, 'password': password}),
                     })
                     .then(res => res.json())
                     .then(data => {
@@ -27,6 +27,7 @@ const CreateUser = () => {
                         
                         if(data==1){
                             console.log("User exists")
+                            window.open('login.html', '_self');
                         }
                         else if(data==0){
                             console.log("User created");
