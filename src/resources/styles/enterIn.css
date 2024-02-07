@@ -163,19 +163,22 @@ span{
     z-index: 5;
     right: 0px;
     transition-duration: right 2s;
+    border-radius: 50% 0px 0px 50%;
 }
 
 .leftClass{
     transition-duration: 2s;
     right:50% ; 
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    border-radius: 0% 50% 50% 0%;
+    /* border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%; */
 }
 .rightClass{
     transition-duration: 2s;
     right:0px ; 
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-radius: 50% 0px 0px 50%;
+    /* border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%; */
 }
 .inactive{
     transition-duration: 2s;
