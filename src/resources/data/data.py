@@ -1,6 +1,8 @@
-# import mysql.connector
+#uvicorn data:app --reload
+
+
+import mysql.connector
 from random import random
-#uvicorn myapi:app --reload
 
 import math
 import datetime
@@ -18,13 +20,13 @@ user = 'root'
 password = 'mysqlpass'
 database = 'cyber_cypher'
 
-# mydb = mysql.connector.connect(
-#     host=host,
-#     user=user,
-#     password=password,
-#     database=database
-# )
-# mycursor = mydb.cursor()
+mydb = mysql.connector.connect(
+    host=host,
+    user=user,
+    password=password,
+    database=database
+)
+mycursor = mydb.cursor()
 
 
 app = FastAPI()
@@ -49,26 +51,26 @@ async def index(listmine: dict):
     # name = listmine['name']
     email = listmine['email']
     password = listmine['password']
-    # sql = """
-    #     SELECT email
-    #     FROM users
-    #     """
-    # mycursor.execute(sql)
-    # myresult = mycursor.fetchall()
+    sql = """
+        SELECT email
+        FROM users
+        """
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
 
-    # if not validate_email(email):
-    #     return 2
+    if not validate_email(email):
+        return 2
     
-    # for a in myresult:
-    #     if a[0] == email:
-    #         return 1
+    for a in myresult:
+        if a[0] == email:
+            return 1
 
-    # sql = """
-    #     INSERT INTO users (name, password, email)
-    #     VALUES (%s, %s, %s);
-    #     """
-    # mycursor.execute(sql, [name, password, email])
-    # mydb.commit()
+    sql = """
+        INSERT INTO users (name, password, email)
+        VALUES (%s, %s, %s);
+        """
+    mycursor.execute(sql, [ password, email])
+    mydb.commit()
     
     
     # user_data = {"name" : name, "email" : email, "password" : password}
@@ -84,22 +86,22 @@ async def index(mydict: dict):
         SELECT email, password
         FROM users
         """
-    # mycursor.execute(sql)
-    # myresult = mycursor.fetchall()
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
 
-    if validate_email(email):
-        if password == "1234":
-            return 1
-        else:
-            return 0
-    else:
-        return -1
-    
-
-    
-
-    # for a in myresult:
-    #     if a[0] == email and a[1] == password:
+    # if validate_email(email):
+    #     if password == "1234":
+    #         return 1
+    #     else:
     #         return 0
+    # else:
+    #     return -1
+    
 
-    # return myresult
+    
+
+    for a in myresult:
+        if a[0] == email and a[1] == password:
+            return 1
+
+    return 0
