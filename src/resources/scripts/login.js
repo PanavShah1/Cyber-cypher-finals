@@ -19,6 +19,7 @@ const LoginUser = () => {
                         
                         if(data==1){
                             console.log("Logging in")
+                            
                         }
                         else if(data==0){
                             console.log("Incorrect password");

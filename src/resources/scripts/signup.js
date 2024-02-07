@@ -4,10 +4,7 @@ const CreateUser = () => {
     let password2 = document.getElementById('password2').value;
     let err = document.getElementById('passwordConfirm');
     
-    if(parseInt(email).toString()===email && email.length==10){
-        console.log('same');
     
-    // console.log( parseInt(email));
         if (password===password2) {
             if (password2.length>=6){
                     console.log(`emailile number is: ${email}\nPassword is: ${password}`)
@@ -51,9 +48,7 @@ const CreateUser = () => {
             err.innerHTML = "Passwords must match<br><br>";
             console.log("error");
         }
-    } else {
-        err.innerHTML = "Invalid Entry<br><br>";
-    }
+
 
 
     

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../resources/styles/login.css">
+</head>
+<body>
+    <div id = "header">
+        <div class="headerElement">element1</div>
+        <div class="headerElement">element2</div>
+        <div class="headerElement">element3</div>
+        <div class="headerElement">element4</div>
+    </div>
+    <div id="loginOuterContainer">
+        <div id = loginContainer>
+            <div class="subContainer" id="imgHolder">
+                <form id ='signupForm'>
+                    <div>
+                        <label for="email">Email</label><br>
+                        <input type="text" id="email" name="email" placeholder="Email"><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="password">Password</label><br>
+                        <input type="password" id="password" name="password" placeholder="Password"><br>
+                    </div>
+                    
+            
+                    <div>
+                        <label for="password2"></label><br>
+                        <input type="password" id="password2" name="password2" placeholder="Confirm Password"><br>
+                    </div>
+
+                    
+                </form>
+                <span id="passwordConfirm"></span>
+                <button onclick="CreateUser()" class="next">Sign up</button>
+                <br>
+                <p>Have an account? <a href="login.html">Login!</a></p>
+            </div>
+            <div class="subContainer" id="formHolder">
+                <form id ='signupForm'>
+                    <div>
+                        <label for="email">Email</label><br>
+                        <input type="text" id="email" name="email" placeholder="Email"><br>
+                    </div>
+                    <div>
+                        <label for="password">Password</label><br>
+                        <input type="password" id="password" name="password" placeholder="Password"><br>
+                    </div>
+                    
+            
+                   
+
+                    
+                </form>
+                <span id="allgood"></span>
+                <button onclick="LoginUser()" class="next">Login</button>
+                <br>
+                <p>No account? <a href="signup.html">Sign up!</a></p>
+            </div>
+        </div>
+
+    </div>     
+
+
+
+
+    <script src="../resources/scripts/enterIn.js"></script>
+</body>
+</html>
