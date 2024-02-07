@@ -43,6 +43,7 @@ app.add_middleware(
 )
 
 
+
 @app.post("/new-user")
 async def index(listmine: dict):
     # name = listmine['name']
