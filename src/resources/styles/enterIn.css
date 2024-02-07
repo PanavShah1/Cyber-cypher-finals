@@ -54,7 +54,7 @@
     background-color: aqua;
     
 }
-#formHolder{
+#LoginHolder{
     display: flex;
     
     flex-direction: column;
@@ -71,4 +71,42 @@ button{
 span{
     align-self: center;
     color: red;
+}
+.shifter{
+    text-decoration: underline;
+    text-transform: capitalize;
+    color:darkblue;
+}
+.shifter:hover{
+    transform: scale(1.02);
+}
+.movingContainer{
+    background-color: blueviolet;
+    position: absolute;
+    /* left:0; */
+    height: 100%;
+    width: 60%;
+    z-index: 5;
+    right: 0px;
+    /* right: 0; */
+    
+    transition-duration: right 2s;
+}
+.leftClass{
+    transition-duration: 2s;
+    right:50% ; 
+}
+.rightClass{
+    transition-duration: 2s;
+    right:0px ; 
+    background-color: blue;
+}
+.inactive{
+    transition-duration: 2s;
+    opacity: 0;
+}
+.active{
+    transition-duration: 2s;
+    opacity: 1;
+    
 }

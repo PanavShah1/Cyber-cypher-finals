@@ -5,7 +5,7 @@ const LoginUser = () => {
     
         // console.log('same');
     
-
+                    console.log('email', email, 'password', password);
                     fetch('http://127.0.0.1:8000/login', {
                     method: 'POST',
                     headers: {
@@ -34,6 +34,7 @@ const LoginUser = () => {
                     .catch(err => {
                         console.log(err);
                     });
+                    
                 
                 
                 
@@ -50,7 +51,7 @@ const CreateUser = () => {
     
         if (password===password2) {
             if (password2.length>=6){
-                    console.log(`emailile number is: ${email}\nPassword is: ${password}`)
+                    console.log(`email is: ${email}\nPassword is: ${password}`)
                     err.innerHTML = "";
 
                     let dataVal = -1;
@@ -67,7 +68,7 @@ const CreateUser = () => {
                         
                         if(data==1){
                             console.log("User exists")
-                            window.open('login.html', '_self');
+                            // window.open('login.html', '_self');
                         }
                         else if(data==0){
                             console.log("User created");
@@ -96,6 +97,43 @@ const CreateUser = () => {
 
     
     
+
+}
+const LoginUse = () => {
+    console.log("becoming rightClass");
+    let mainBar = document.getElementById('movingBar');
+    mainBar.classList.remove('leftClass');
+    mainBar.classList.add('rightClass');
+
+    let elementsToFade = document.getElementById('loginDiv');
+    elementsToFade.classList.remove('active');
+    elementsToFade.classList.add('inactive');
+    let elementsToUnFade = document.getElementById('signupDiv');
+    elementsToUnFade.classList.remove('inactive');
+    elementsToUnFade.classList.add('active');
+
+
+    
+
+
+
+
+}
+const SignUpUse = () => {
+    console.log("becoming rightClass");
+    let mainBar = document.getElementById('movingBar');
+    mainBar.classList.remove('rightClass');
+    mainBar.classList.add('leftClass');
+
+    let elementsToFade = document.getElementById('signupDiv');
+    elementsToFade.classList.remove('active');
+    elementsToFade.classList.add('inactive');
+    let elementsToUnFade = document.getElementById('loginDiv');
+    elementsToUnFade.classList.remove('inactive');
+    elementsToUnFade.classList.add('active');
+
+    
+
 
 }
 

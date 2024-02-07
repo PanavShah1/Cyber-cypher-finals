@@ -15,8 +15,11 @@
     </div>
     <div id="loginOuterContainer">
         <div id = loginContainer>
+            <div class ="movingContainer" id="movingBar">Hel</div>
             <div class="subContainer" id="SignupHolder">
+                <div id="signupDiv">
                 <form id ='signupForm'>
+        
                     <div>
                         <label for="email">Email</label><br>
                         <input type="text" id="email" name="email" placeholder="Email"><br>
@@ -38,9 +41,11 @@
                 <span id="passwordConfirm"></span>
                 <button onclick="CreateUser()" class="next">Sign up</button>
                 <br>
-                <p onclick="LoginUseUse()"><a>Have an account? Login!</a></p>
+                <p class='shifter' onclick="SignUpUse()"><a>Have an account? Login!</a></p>
+            </div>
             </div>
             <div class="subContainer" id="LoginHolder">
+                <div id="loginDiv">
                 <form id ='LoginForm'>
                     <div>
                         <label for="Loginemail">Email</label><br>
@@ -58,7 +63,8 @@
                 <span id="allgood"></span>
                 <button onclick="LoginUser()" class="next">Login</button>
                 <br>
-                <p onclick="SignUpUse()"><a>No account? Sign up!</a></p>
+                <p class='shifter' onclick="LoginUse()">No account? Sign up!</p>
+            </div>
             </div>
         </div>
 
