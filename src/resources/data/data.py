@@ -48,7 +48,7 @@ app.add_middleware(
 
 @app.post("/new-user")
 async def index(listmine: dict):
-    # name = listmine['name']
+    name = listmine['name']
     email = listmine['email']
     password = listmine['password']
     sql = """
@@ -69,7 +69,7 @@ async def index(listmine: dict):
         INSERT INTO users (name, password, email)
         VALUES (%s, %s, %s);
         """
-    mycursor.execute(sql, [ password, email])
+    mycursor.execute(sql, [name, password, email])
     mydb.commit()
     
     
