@@ -7,64 +7,69 @@
     <link rel="stylesheet" href="../resources/styles/enterIn.css">
 </head>
 <body>
-    <div id = "header">
+    <!-- <div id = "header">
         <div class="headerElement">element1</div>
         <div class="headerElement">element2</div>
         <div class="headerElement">element3</div>
         <div class="headerElement">element4</div>
-    </div>
+    </div> -->
+
+
     <div id="loginOuterContainer">
         <div id = loginContainer>
-            <div class ="movingContainer" id="movingBar">Hel</div>
+            <div class ="movingContainer" id="movingBar"></div>
             <div class="subContainer" id="SignupHolder">
-                <div id="signupDiv">
                 <form id ='signupForm'>
-        
+                    <h1>Login</h1>
                     <div>
-                        <label for="email">Email</label><br>
+                        <!-- <label for="email">Email</label><br> -->
                         <input type="text" id="email" name="email" placeholder="Email"><br>
                     </div>
-                    <br>
                     <div>
-                        <label for="password">Password</label><br>
+                        <!-- <label for="password">Password</label><br> -->
                         <input type="password" id="password" name="password" placeholder="Password"><br>
                     </div>
                     
             
                     <div>
-                        <label for="password2"></label><br>
+                        <!-- <label for="password2"></label><br> -->
                         <input type="password" id="password2" name="password2" placeholder="Confirm Password"><br>
                     </div>
 
                     
-                </form>
+                
                 <span id="passwordConfirm"></span>
-                <button onclick="CreateUser()" class="next">Sign up</button>
+                <button onclick="CreateUser()" class="next">Login</button>
                 <br>
                 <p class='shifter' onclick="SignUpUse()"><a>Have an account? Login!</a></p>
-            </div>
+            </form>
+
             </div>
             <div class="subContainer" id="LoginHolder">
-                <div id="loginDiv">
                 <form id ='LoginForm'>
+                    <h1>Register</h1>
                     <div>
-                        <label for="Loginemail">Email</label><br>
+                        <!-- <label for="Loginemail">Email</label><br> -->
+                        <input type="text" id="Loginname" name="name" placeholder="Name"><br>
+                    </div>
+                    <div>
+                        <!-- <label for="Loginemail">Email</label><br> -->
                         <input type="text" id="Loginemail" name="email" placeholder="Email"><br>
                     </div>
                     <div>
-                        <label for="Loginpassword">Password</label><br>
+                        <!-- <label for="Loginpassword">Password</label><br> -->
                         <input type="password" id="Loginpassword" name="password" placeholder="Password"><br>
                     </div>
                     
             
 
                     
-                </form>
                 <span id="allgood"></span>
                 <button onclick="LoginUser()" class="next">Login</button>
                 <br>
                 <p class='shifter' onclick="LoginUse()">No account? Sign up!</p>
-            </div>
+            </form>
+
             </div>
         </div>
 
