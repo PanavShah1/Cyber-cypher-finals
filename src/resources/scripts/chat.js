@@ -60,7 +60,7 @@ window.onload = () => {
         let k = askData(email1, email2);
         if(dataDict!= k){
             dataDict = k;
-            updateChatScreen();
+            updateChatScreen(dataDict);
         }
     }, 1000)
 
@@ -80,7 +80,7 @@ window.onload = () => {
 
     //     }
     // }
-    updateChatScreen();
+    updateChatScreen(dataDict);
 }
 
 
@@ -91,10 +91,10 @@ window.onload = () => {
 
 
 
-const updateChatScreen = () => {
+const updateChatScreen = (data) => {
     document.getElementById("textContainer").innerHTML = "";
-    for(let i = 0; i < dataDict.length; i++) {
-        let current = dataDict[i];
+    for(let i = 0; i < data.length; i++) {
+        let current = data[i];
         if(current.type === 'self') {
             addTextBox(current.text, 1);
         }
