@@ -32,3 +32,6 @@
 .chat img{
     height: 20px;
 }
+button{
+    position: absolute;
+}
