@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="../resources/styles/chat.css">
+</head>
+<body>
+    <textarea id="textArea"></textarea>
+    <button id="submitButton" onclick="submitText(1)">Submit</button>
+    <button onclick="submitText(0)">Submit Other</button>
+    <button id="updateScreenButton" onclick="updateChatScreen()">Update Screen</button>
+    <div id="textContainer">
+
+    <div class="textBubble other" id="emptyTextDiv"></div>
+    </div>
+
+
+    <script src="../resources/scripts/chat.js"></script>
+</body>
+</html>

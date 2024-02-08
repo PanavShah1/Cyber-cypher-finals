@@ -1,0 +1,72 @@
+*{
+    margin: 0px;;
+}
+textarea{
+    /* position: absolute; */
+    align-self: center;
+    left: 10%;
+    width:80%;
+    height:5%;
+}
+
+button{
+    position: absolute;
+    right: 75%;
+    height: 5%;
+    width: 20%;
+    align-self: center;
+}
+body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+#textContainer{
+    position: relative;
+    width:100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.textBubble{
+    position:relative;
+    /* width: 10%; */
+    max-width: 80%;
+    flex-wrap: wrap;
+    text-wrap:wrap;
+    overflow-wrap:break-word;
+    background-color: aqua;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+.other{
+    align-self: flex-end;
+    background-color:azure;
+}
+.self{
+    align-self: self-start;
+    background-color: bisque;
+}
+#submitButton{
+    position: absolute;
+    right: 10%;
+    height: 5%;
+    transform: scale(1.04);
+
+}
+#updateScreenButton{
+    top:5%;
+    z-index: 10;
+}
+
+#emptyTextDiv{
+
+    background-color: transparent;
+}
