@@ -20,7 +20,7 @@ const LoginUser = (e) => {
                         if(data==1){
                             console.log("Logging in")
                             sessionStorage.setItem('email_self', email);
-                            window.open("../../pages/main_page.html", target="_self");
+                            window.open("../../src/pages/main_page.html", target="_self");
                             
                         }
                         else if(data==0){
