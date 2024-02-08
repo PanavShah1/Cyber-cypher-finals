@@ -1,4 +1,5 @@
-const LoginUser = () => {
+const LoginUser = (e) => {
+    e.preventDefault();
     let email = document.getElementById('Loginemail').value;
     let password = document.getElementById('Loginpassword').value;
     let errbox = document.getElementById('allgood');
@@ -42,7 +43,8 @@ const LoginUser = () => {
 
 
 
-const CreateUser = () => {
+const CreateUser = (e) => {
+    e.preventDefault();
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
@@ -141,6 +143,9 @@ const SignUpUse = () => {
 
 
 }
+
+document.getElementById("loginButton").addEventListener('click', LoginUser);
+document.getElementById("signupButton").addEventListener('click', CreateUser);
 
 
 
