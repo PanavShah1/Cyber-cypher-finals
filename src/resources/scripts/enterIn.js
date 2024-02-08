@@ -103,6 +103,9 @@ const CreateUser = () => {
 const LoginUse = () => {
     console.log("becoming rightClass");
     let mainBar = document.getElementById('movingBar');
+
+    mainBar.innerHTML = '<h1 style="color: black;">Hi, welcome to <br>our website</h1><p>Register to use the website</p><p class="shifter" onclick="SignUpUse()" id="login-shifter"><a>REGISTER</a></p>';
+
     mainBar.classList.remove('leftClass');
     mainBar.classList.add('rightClass');
 
@@ -126,6 +129,9 @@ const LoginUse = () => {
 const SignUpUse = () => {
     console.log("becoming rightClass");
     let mainBar = document.getElementById('movingBar');
+
+    mainBar.innerHTML = '<h1 style="color: black;">Welcome back</h1><p>Login to the website</p><p class="shifter" onclick="LoginUse()" id="Register-shifter"><a>LOGIN</a></p>';
+
     mainBar.classList.remove('rightClass');
     mainBar.classList.add('leftClass');
 
@@ -135,6 +141,8 @@ const SignUpUse = () => {
     let elementsToUnFade = document.getElementById('loginDiv');
     elementsToUnFade.classList.remove('inactive');
     elementsToUnFade.classList.add('active');
+
+
 
     
     // var button = document.createElement('p');

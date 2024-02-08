@@ -17,7 +17,12 @@
 
     <div id="loginOuterContainer">
         <div id = loginContainer>
-            <div class ="movingContainer" id="movingBar"></div>
+            <div class ="movingContainer cont-right" id="movingBar">
+                <h1 style="color: black;">Hi, welcome to <br>our website</h1>
+                <p>Register to use the website</p>
+                <p class='shifter' onclick="SignUpUse()" id="login-shifter"><a>REGISTER</a></p>
+            </div>
+
             <div class="subContainer" id="SignupHolder">
                 <form id ='signupForm'>
                     <h1>Login</h1>
@@ -39,9 +44,8 @@
                     
                 
                 <span id="passwordConfirm"></span>
-                <button onclick="CreateUser()" class="next">Login</button>
+                <button onclick="CreateUser()" class="next">LOGIN</button>
                 <br>
-                <p class='shifter' onclick="SignUpUse()"><a>Have an account? Login!</a></p>
             </form>
 
             </div>
@@ -65,9 +69,9 @@
 
                     
                 <span id="allgood"></span>
-                <button onclick="LoginUser()" class="next">Login</button>
+                <button onclick="LoginUser()" class="next">REGISTER</button>
                 <br>
-                <p class='shifter' onclick="LoginUse()">No account? Sign up!</p>
+                <!-- <p class='shifter' onclick="LoginUse()">No account? Sign up!</p> -->
             </form>
 
             </div>
