@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="../resources/styles/chat.css">
 </head>
 <body>
-    <textarea id="textArea"></textarea>
-    <button id="submitButton" onclick="submitText(1)">Submit</button>
-    <button onclick="submitText(0)">Submit Other</button>
-    <button id="updateScreenButton" onclick="updateChatScreen()">Update Screen</button>
+    
     <div id="textContainer">
 
     <div class="textBubble other" id="emptyTextDiv"></div>
     </div>
-
+    
+    <div id="input-container">
+        <textarea id="textArea"></textarea>
+        <button id="submitButton" onclick="submitText(1)"><img src="../resources/images/send.png" alt=""></button>
+        <!-- <button onclick="submitText(0)">Submit Other</button> -->
+        <!-- <button id="updateScreenButton" onclick="updateChatScreen()">Update Screen</button> -->
+    </div>
 
     <script src="../resources/scripts/chat.js"></script>
 </body>
