@@ -48,6 +48,7 @@ const CreateUser = () => {
     let password = document.getElementById('password').value;
     let password2 = document.getElementById('password2').value;
     let err = document.getElementById('passwordConfirm');
+    console.log(name, email);
     
     
         if (password===password2) {
@@ -103,52 +104,41 @@ const CreateUser = () => {
 const LoginUse = () => {
     console.log("becoming rightClass");
     let mainBar = document.getElementById('movingBar');
+    
+    mainBar.innerHTML = '<h1 style="color: black;">Welcome back</h1><p>Login to the website</p><p class="shifter" onclick="SignUpUse()" id="Register-shifter"><a>LOGIN</a></p>';
 
-    mainBar.innerHTML = '<h1 style="color: black;">Hi, welcome to <br>our website</h1><p>Register to use the website</p><p class="shifter" onclick="SignUpUse()" id="login-shifter"><a>REGISTER</a></p>';
+
 
     mainBar.classList.remove('leftClass');
     mainBar.classList.add('rightClass');
 
-    let elementsToFade = document.getElementById('loginDiv');
-    elementsToFade.classList.remove('active');
-    elementsToFade.classList.add('inactive');
-    let elementsToUnFade = document.getElementById('signupDiv');
-    elementsToUnFade.classList.remove('inactive');
-    elementsToUnFade.classList.add('active');
+    // let elementsToFade = document.getElementById('loginDiv');
+    // elementsToFade.classList.remove('active');
+    // elementsToFade.classList.add('inactive');
+    // let elementsToUnFade = document.getElementById('signupDiv');
+    // elementsToUnFade.classList.remove('inactive');
+    // elementsToUnFade.classList.add('active');
 
     
-
-
-
-    
-
-
-
 
 }
 const SignUpUse = () => {
-    console.log("becoming rightClass");
+    console.log("becoming leftClass");
     let mainBar = document.getElementById('movingBar');
 
-    mainBar.innerHTML = '<h1 style="color: black;">Welcome back</h1><p>Login to the website</p><p class="shifter" onclick="LoginUse()" id="Register-shifter"><a>LOGIN</a></p>';
+    mainBar.innerHTML = '<h1 style="color: black;">Hi, welcome to <br>our website</h1><p>Register to use the website</p><p class="shifter" onclick="LoginUse()" id="login-shifter"><a>REGISTER</a></p>';
+
 
     mainBar.classList.remove('rightClass');
     mainBar.classList.add('leftClass');
 
-    let elementsToFade = document.getElementById('signupDiv');
-    elementsToFade.classList.remove('active');
-    elementsToFade.classList.add('inactive');
-    let elementsToUnFade = document.getElementById('loginDiv');
-    elementsToUnFade.classList.remove('inactive');
-    elementsToUnFade.classList.add('active');
+    // let elementsToFade = document.getElementById('signupDiv');
+    // elementsToFade.classList.remove('active');
+    // elementsToFade.classList.add('inactive');
+    // let elementsToUnFade = document.getElementById('loginDiv');
+    // elementsToUnFade.classList.remove('inactive');
+    // elementsToUnFade.classList.add('active');
 
-
-
-    
-    // var button = document.createElement('p');
-    // button.classList.add('classname');
-    // button.innerHTML = "<p class='shifter' onclick='SignUpUse()'><a>Have an account? Login!</a></p>";
-    // mainBar.appendChild(button);
 
 }
 
