@@ -94,12 +94,12 @@ const clickChat = (emailDoc) => {
 
 }
 
-const createDoctor = () => {
-    let htmlval = '<div class="doctor-label"><img src="../resources/images/faces/face1.png" alt=""><div class="info"><p>Name : Doctor_name</p><p>Speciality : Doctor_speciality</p><p>Contact : Doctor_email</p><div class="chat"><p>Chat</p> <img src="../resources/images/send.png" alt=""></div></div></div>'
+const createDoctor = (name, email, speciality) => {
+    let htmlval = `<div class="doctor-label"><img src="../resources/images/faces/face1.png" alt=""><div class="info"><p>Name : ${name}</p><p>Speciality : ${speciality}</p><p>Contact : ${email}</p><div class="chat"><p>Chat</p> <img src="../resources/images/send.png" alt=""></div></div></div>`
 
     const container = document.createElement('div');
     container.addEventListener('click', ()=>{
-        clickChat("sam@gmail.com");
+        clickChat(email);
     });
     container.classList.add("doctors");
     container.innerHTML = htmlval;
