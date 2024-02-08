@@ -19,13 +19,19 @@ const LoginUser = (e) => {
                         
                         if(data==1){
                             console.log("Logging in")
+                            window.open("../../pages/main_page.html");
                             
                         }
                         else if(data==0){
-                            console.log("Incorrect password");
+                            console.log("Not found, register instead!");
+                            errbox.innerHTML = "Not found, register instead!";
+                            setTimeout(() => {
+                                SignUpUse();
+                            }, 1000)
                         }
-                        else console.log("Invalid credentials");
+                        else{console.log("Invalid credentials");
                         errbox.innerHTML = "Invalid credentials";
+                    }
 
 
 
@@ -70,7 +76,11 @@ const CreateUser = (e) => {
                         console.log(data);
                         
                         if(data==1){
-                            console.log("User exists")
+                            console.log("User exists");
+                            err.innerHTML = "User exists";
+                            setTimeout(() => {
+                                LoginUse();
+                            }, 1000)
                         }
                         else if(data==0){
                             console.log("User created");
@@ -101,11 +111,11 @@ const CreateUser = (e) => {
     
 
 }
-const LoginUse = () => {
+const SignUpUse = () => {
     console.log("becoming rightClass");
     let mainBar = document.getElementById('movingBar');
     
-    mainBar.innerHTML = '<h1 style="color: black;">Welcome back</h1><p>Login to the website</p><p class="shifter" onclick="SignUpUse()" id="Register-shifter"><a>LOGIN</a></p>';
+    mainBar.innerHTML = '<h1 style="color: black;">Welcome back</h1><p>Login to the website</p><p class="shifter" onclick="LoginUse()" id="Register-shifter"><a>LOGIN</a></p>';
 
 
 
@@ -113,11 +123,11 @@ const LoginUse = () => {
     mainBar.classList.add('rightClass');
 
 }
-const SignUpUse = () => {
+const LoginUse = () => {
     console.log("becoming leftClass");
     let mainBar = document.getElementById('movingBar');
 
-    mainBar.innerHTML = '<h1 style="color: black;">Hi, welcome to <br>our website</h1><p>Register to use the website</p><p class="shifter" onclick="LoginUse()" id="login-shifter"><a>REGISTER</a></p>';
+    mainBar.innerHTML = '<h1 style="color: black;">Hi, welcome to <br>our website</h1><p>Register to use the website</p><p class="shifter" onclick="SignUpUse()" id="login-shifter"><a>REGISTER</a></p>';
 
 
     mainBar.classList.remove('rightClass');

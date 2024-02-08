@@ -5,6 +5,8 @@ const arr = [
     {'type': 'other', 'text': 'shuddup'},
 ];
 
+//0 is patient, 1 is doctor.
+
 let self=0;
 let other=0;
 let email1;
@@ -80,8 +82,8 @@ window.onload = () => {
 
 const updateChatScreen = () => {
     document.getElementById("textContainer").innerHTML = "";
-    for(let i = 0; i < arr.length; i++) {
-        let current = arr[i];
+    for(let i = 0; i < dataDict.length; i++) {
+        let current = dataDict[i];
         if(current.type === 'self') {
             addTextBox(current.text, 1);
         }
@@ -105,7 +107,7 @@ const askData = (emailZero, emailOne) => {
             )
             .then(res => res.json())
             .then(data => {
-                console.log("\nData request: "+ data);
+                console.log("\nData recieved (chat): "+ data);
                 dataToReturn = data;
                 }
             )
@@ -116,19 +118,21 @@ const askData = (emailZero, emailOne) => {
     return dataToReturn
 }
 
-const sendData = (emailZero, emailOne) => {
+
+//remember to send only 0 or 1
+const sendData = (emailZero, emailOne, type, text) => {
     
-    fetch('http://127.0.0.1:8000/chat-new', {
+    fetch('http://127.0.0.1:8000/new-messages', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({'emailZero':emailZero, 'emailOne': emailOne}),
+                    body: JSON.stringify({'emailZero':emailZero, 'emailOne': emailOne, 'data': [{'type': type, 'text': text}]}),
                 }
             )
             .then(res => res.json())
             .then(data => {
-                console.log("\nData request: "+ data);
+                console.log("\nData recieved (new-messages): "+ data);
     
                 }
             )
