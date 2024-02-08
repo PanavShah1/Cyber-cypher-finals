@@ -63,9 +63,10 @@ button:hover{
     width:100%;
     max-width: 1000px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     height: 100vh;
     overflow-y: scroll;
+    flex-direction: column-reverse;
 }
 .textBubble{
     /* position:relative; */
