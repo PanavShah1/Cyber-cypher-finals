@@ -89,19 +89,84 @@ async def index(mydict: dict):
     mycursor.execute(sql)
     myresult = mycursor.fetchall()
 
-    # if validate_email(email):
-    #     if password == "1234":
-    #         return 1
-    #     else:
-    #         return 0
-    # else:
-    #     return -1
-    
+    for a in myresult:
+        if a[0] == email and a[1] == password:
+            return 1
 
+    return 0
+
+@app.post("/new-user-doctor")
+async def index(listmine: dict):
+    name = listmine['name']
+    email = listmine['email']
+    password = listmine['password']
+    speciality = listmine['speciality']
+    sql = """
+        SELECT email
+        FROM doctors
+        """
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+
+    if not validate_email(email):
+        return 2
     
+    for a in myresult:
+        if a[0] == email:
+            return 1
+
+    sql = """
+        INSERT INTO doctors (name, password, email, speciality)
+        VALUES (%s, %s, %s, %s);
+        """
+    mycursor.execute(sql, [name, password, email, speciality])
+    mydb.commit()
+    
+    
+    # user_data = {"name" : name, "email" : email, "password" : password}
+    if password == "1234567890": # change later
+        return 1
+    return 0
+
+@app.post("/login-doctor")
+async def index(mydict: dict):
+    email = mydict['email']
+    password = mydict['password']
+    sql = """
+        SELECT email, password
+        FROM doctors
+        """
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
 
     for a in myresult:
         if a[0] == email and a[1] == password:
             return 1
 
     return 0
+
+
+@app.post("/chat")
+async def chat(mydict: dict):
+    patient_email = mydict['emailZero']
+    doctor_email = mydict['emailOne']
+    # return f'{patient_email}{doctor_email}'
+
+    place = f'{patient_email}<{doctor_email}'
+
+    try: 
+        sql = f'SELECT {place}'
+    except Exception as e:
+        sql = f"""
+            CREATE TABLE `cyber_cypher`.`testtable` (
+            `code` INT NOT NULL,
+            `message` VARCHAR(45) NULL);"""
+        mycursor.execute(sql)
+    try:
+        sql = f"SELECT * FROM cyber_cypher.`testtable`;"
+        mycursor.execute(sql)
+        myresult = mycursor.fetchall()
+        return(myresult)
+    except Exception as e:
+        return e
+    

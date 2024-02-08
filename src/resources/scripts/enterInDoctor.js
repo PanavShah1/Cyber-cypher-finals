@@ -6,7 +6,7 @@ const LoginUser = (e) => {
     
     
                     console.log('email', email, 'password', password);
-                    fetch('http://127.0.0.1:8000/login', {
+                    fetch('http://127.0.0.1:8000/login-doctor', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -45,6 +45,7 @@ const LoginUser = (e) => {
 const CreateUser = (e) => {
     e.preventDefault();
     let name = document.getElementById('name').value;
+    let speciality = document.getElementById('speciality').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     let password2 = document.getElementById('password2').value;
@@ -58,12 +59,12 @@ const CreateUser = (e) => {
                     err.innerHTML = "";
 
                     let dataVal = -1;
-                    fetch('http://127.0.0.1:8000/new-user', {
+                    fetch('http://127.0.0.1:8000/new-user-doctor', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({'name':name, 'email': email, 'password': password}),
+                    body: JSON.stringify({'name':name, 'email': email, 'password': password, 'speciality': speciality}),
                     })
                     .then(res => res.json())
                     .then(data => {
