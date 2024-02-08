@@ -2,7 +2,23 @@ let dataDict = [];
 let refreshChatLoop;
 let length = 4;
 let email1 ="p_email";
-let email2 = "d_email"
+let email2 = "d_email";
+let isDoc = 0;
+let additionalString
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    let results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+// Retrieve email1 and email2 from URL parameters and log them to the console
+email1 = getUrlParameter('email1');
+email2 = getUrlParameter('email2');
+additionalString = getUrlParameter('additional');
+if (additionalString == "doctor"){
+    isDoc = 1;
+}
 // Function to set up initial data and start chat loop
 const doSetup = () => {
     // Your existing code for setting up email1, email2, and additionalString...
@@ -113,6 +129,7 @@ const submitText = (state) => {
         textArea.value = '';
         console.log(text);
         addTextBox(text, state);
+        if(isDoc) state = (1-state);
         sendData(email1, email2, (1-state), text);
         console.log("Sent data");
     }
