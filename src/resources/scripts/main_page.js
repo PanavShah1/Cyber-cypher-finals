@@ -20,7 +20,7 @@ let additionalString
 
 
 const askData = () => {
-    return fetch('http://127.0.0.1:8000/chat', {
+    return fetch('http://127.0.0.1:8000/get-doctors', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -49,7 +49,19 @@ const updateList = () => {
                 if(dataDict==JSON.stringify(newData)){
                 
                     dataDict = JSON.stringify(newData);
-                    console.log("Stringified value is: "+dataDict);
+                    console.log("Stringified value is: "+dataDict.data);
+                    dataDict = dataDict.data;
+        
+                    setTimeout(() => {
+                        console.log("\n\nStarting generation...\n");
+                        for(let i = 0; i < dataDict.length; i++) {
+                            let current = dataDict[i];
+                            createDoctor(current.name, current.email, current.speciality);
+
+                        }
+
+
+                    }, 500)
                 }
                     
                 
@@ -94,12 +106,12 @@ const clickChat = (emailDoc) => {
 
 }
 
-const createDoctor = () => {
-    let htmlval = '<div class="doctor-label"><img src="../resources/images/faces/face1.png" alt=""><div class="info"><p>Name : Doctor_name</p><p>Speciality : Doctor_speciality</p><p>Contact : Doctor_email</p><div class="chat"><p>Chat</p> <img src="../resources/images/send.png" alt=""></div></div></div>'
+const createDoctor = (name, email, speciality) => {
+    let htmlval = `<div class="doctor-label"><img src="../resources/images/faces/face1.png" alt=""><div class="info"><p>Name : ${name}</p><p>Speciality : ${speciality}</p><p>Contact : ${email}</p><div class="chat"><p>Chat</p> <img src="../resources/images/send.png" alt=""></div></div></div>`
 
     const container = document.createElement('div');
     container.addEventListener('click', ()=>{
-        clickChat("sam@gmail.com");
+        clickChat(email);
     });
     container.classList.add("doctors");
     container.innerHTML = htmlval;
