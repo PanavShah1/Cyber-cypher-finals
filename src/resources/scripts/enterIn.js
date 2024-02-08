@@ -140,13 +140,6 @@ const SignUpUse = () => {
     // elementsToUnFade.classList.add('active');
 
 
-
-    
-    // var button = document.createElement('p');
-    // button.classList.add('classname');
-    // button.innerHTML = "<p class='shifter' onclick='SignUpUse()'><a>Have an account? Login!</a></p>";
-    // mainBar.appendChild(button);
-
 }
 
 
