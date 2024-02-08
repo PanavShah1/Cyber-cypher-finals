@@ -19,7 +19,8 @@ const LoginUser = (e) => {
                         
                         if(data==1){
                             console.log("Logging in")
-                            window.open("../../pages/main_page.html");
+                            sessionStorage.setItem('email_self', email);
+                            window.open("../../pages/main_page.html", target="_self");
                             
                         }
                         else if(data==0){
@@ -84,6 +85,7 @@ const CreateUser = (e) => {
                         }
                         else if(data==0){
                             console.log("User created");
+                            sessionStorage.setItem('email_self', email);
                         }
                         else console.log("Uncaught Error");
 
