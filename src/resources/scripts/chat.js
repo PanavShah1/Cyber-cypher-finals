@@ -1,4 +1,4 @@
-const arr = [
+let dataDict = [
     {'type': 'other', 'text': 'Hello world'},
     {'type': 'self', 'text': 'world is small'},
     {'type': 'self', 'text': 'Hello universe'},
@@ -11,7 +11,7 @@ let self=0;
 let other=0;
 let email1;
 let email2;
-let dataDict;
+// let dataDict;
 let refreshChatLoop;
 window.onload = () => {
 
@@ -27,6 +27,16 @@ window.onload = () => {
     let email1 = getUrlParameter('email1');
     let email2 = getUrlParameter('email2');
     let additionalString = getUrlParameter('additional');
+// /*
+// // Comment this part out when not testing
+    email1 = "p_email";
+    email2 = "d_email";
+
+    additionalString ="patient";
+
+
+
+// */
     
     if(additionalString=="doctor") self = 1;
     else other = 1;
@@ -46,30 +56,31 @@ window.onload = () => {
 
 
     dataDict = askData(email1, email2);
-    // refreshChatLoop = setInterval(() => {
-    //     let k = askData(email1, email2);
-    //     if(dataDict!= k){
-    //         dataDict = k;
-    //         updateChatScreen();
+    refreshChatLoop = setInterval(() => {
+        let k = askData(email1, email2);
+        if(dataDict!= k){
+            dataDict = k;
+            updateChatScreen();
+        }
+    }, 1000)
+
+
+    
+    
+
+
+
+    // for(let i = 0; i < dataDict.length; i++) {
+    //     let current = dataDict[i];
+    //     if(current.type === 'self') {
+    //         addTextBox(current.text, 1);
     //     }
-    // }, 1000)
+    //     else if(current.type === 'other') {
+    //         addTextBox(current.text, 0);
 
-
-    
-    
-
-
-
-    for(let i = 0; i < arr.length; i++) {
-        let current = arr[i];
-        if(current.type === 'self') {
-            addTextBox(current.text, 1);
-        }
-        else if(current.type === 'other') {
-            addTextBox(current.text, 0);
-
-        }
-    }
+    //     }
+    // }
+    updateChatScreen();
 }
 
 
