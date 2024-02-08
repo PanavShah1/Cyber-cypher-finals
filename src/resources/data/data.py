@@ -185,7 +185,6 @@ async def chat(mydict: dict):
     
 @app.post("/new-messages")
 async def new_messages(mydict: dict):
-    # mydict = ['p_email', 'd_email', [{'type' : 0, 'text' : 'texts'}, {}]]
     place = f'{mydict["emailZero"]}<{mydict["emailOne"]}'
     # return mydict
     try:
@@ -205,7 +204,26 @@ async def new_messages(mydict: dict):
     except Exception as e:
         return e
 
-        
+@app.post("/get-doctors")
+async def get_doctors(mydict:dict):
+    sql = "SELECT * FROM doctors"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    mydict = {"emailZero": None, "emailOne":None, "data": []}
+    for element in myresult:
+        mydict["data"].append({'name': element[0], 'email': element[2], 'speciality': element[3]})
+    return mydict
+
+@app.post("/get-patients")
+async def get_doctors(mydict:dict):
+    sql = "SELECT * FROM users"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    mydict = {"emailZero": None, "emailOne":None, "data": []}
+    for element in myresult:
+        mydict["data"].append({'name': element[0], 'email': element[2]})
+    return mydict
+
     
     
     
