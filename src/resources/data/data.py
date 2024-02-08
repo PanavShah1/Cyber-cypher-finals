@@ -150,23 +150,64 @@ async def index(mydict: dict):
 async def chat(mydict: dict):
     patient_email = mydict['emailZero']
     doctor_email = mydict['emailOne']
-    # return f'{patient_email}{doctor_email}'
-
+    # return f'{patient_email}<{doctor_email}'
     place = f'{patient_email}<{doctor_email}'
+    
+    table_name = place
+    sql = "SELECT table_name FROM information_schema.TABLES WHERE table_name = %s"
+    mycursor.execute(sql, (table_name,))
+    result = mycursor.fetchone()
+    flag = True #exists
+    if result:
+        flag = True
+    else:
+        flag = False
 
-    try: 
-        sql = f'SELECT {place}'
-    except Exception as e:
+    if not flag:
         sql = f"""
-            CREATE TABLE `cyber_cypher`.`testtable` (
+            CREATE TABLE `cyber_cypher`.`{place}` (
             `code` INT NOT NULL,
             `message` VARCHAR(45) NULL);"""
         mycursor.execute(sql)
+
     try:
-        sql = f"SELECT * FROM cyber_cypher.`testtable`;"
+        sql = f"SELECT * FROM cyber_cypher.`{place}`;"
         mycursor.execute(sql)
         myresult = mycursor.fetchall()
-        return(myresult)
+
+        result_dict = []
+        for a, b in myresult:
+            result_dict.append({'type' : a, 'text' : b})
+
+        return(result_dict)
     except Exception as e:
         return e
     
+@app.post("/new-messages")
+async def new_messages(mydict: dict):
+    # mydict = ['p_email', 'd_email', [{'type' : 0, 'text' : 'texts'}, {}]]
+    place = f'{mydict["emailZero"]}<{mydict["emailOne"]}'
+    # return mydict
+    try:
+        for element in mydict["data"]:
+            # return [element['type'], element['text']]
+            # sql = f"""SELECT * FROM cyber_cypher.`{place}`"""
+            # myresult = mycursor.fetchall()
+            # return element
+            text = element['text']
+            sql = f"""
+                    INSERT INTO `cyber_cypher`.`{place}` (`code`, `message`)
+                    VALUES ({element['type']}, '{text}');
+                    """
+            mycursor.execute(sql)
+            
+            mydb.commit()  
+    except Exception as e:
+        return e
+
+        
+    
+    
+    
+    
+     
