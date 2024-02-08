@@ -46,7 +46,7 @@ const updateList = () => {
     askData()
             .then(newData => {
                 //console.log("Stringified value is: "+JSON.stringify(newData))
-                if(dataDict==JSON.stringify(newData)){
+
                 
                     dataDict = JSON.stringify(newData);
                     console.log("Stringified value is: "+dataDict.data);
@@ -62,7 +62,7 @@ const updateList = () => {
 
 
                     }, 500)
-                }
+                
                     
                 
             })
