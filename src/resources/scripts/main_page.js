@@ -48,14 +48,19 @@ const updateList = () => {
                 //console.log("Stringified value is: "+JSON.stringify(newData))
 
                 
-                    dataDict = JSON.stringify(newData);
-                    console.log("Stringified value is: "+dataDict.data);
-                    dataDict = dataDict.data;
+                    dataDict = JSON.parse(JSON.stringify(newData.data));
+                    console.log("Stringified value is: "+dataDict);
+                    console.log("datadict value: "+ dataDict);
+                       
+
         
                     setTimeout(() => {
                         console.log("\n\nStarting generation...\n");
+                        console.log("datadict value: "+ dataDict);
+                        console.log("dataDict length: "+ dataDict.length);
                         for(let i = 0; i < dataDict.length; i++) {
                             let current = dataDict[i];
+                            console.log("RN: "+ current);
                             createDoctor(current.name, current.email, current.speciality);
 
                         }

@@ -154,4 +154,4 @@ const addTextBox = (text, state) => {
 setTimeout(() => {
     console.log("Starting setup");
     doSetup();
-}, 2000);
+}, 1000);
