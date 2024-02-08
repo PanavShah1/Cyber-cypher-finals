@@ -3,15 +3,22 @@
     padding: 0;
 }
 
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
 .navbar{
     display: flex;
     /* padding: 20px; */
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: rgb(60, 60, 60);
     height: 75px;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
+    position: fixed; 
+    width: 100%;
 }
 
 .navbar img{
@@ -47,6 +54,7 @@
     justify-content: center;
     background-color: rgb(76, 176, 114);
     color: white;
+    margin-right: 20px;
 }
 
 .login-div:hover{

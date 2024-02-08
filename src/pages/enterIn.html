@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../resources/styles/enterIn.css">
+    <style>
+        #canvas1{
+            position: absolute;
+            width: 1000px;    
+            height: 500px;      
+        }
+    </style>
 </head>
 <body>
     <!-- <div id = "header">
@@ -13,6 +20,8 @@
         <div class="headerElement">element3</div>
         <div class="headerElement">element4</div>
     </div> -->
+    <canvas id="canvas1"></canvas>
+    <script src="script.js"></script>
 
 
     <div id="loginOuterContainer">
@@ -46,9 +55,10 @@
                     
                 
                 <span id="passwordConfirm"></span>
-                <button onclick="CreateUser()" class="next">REGISTER</button>
                 <br>
             </form>
+            <button onclick="CreateUser()" class="next">REGISTER</button>
+
 
             </div>
             <div class="subContainer" id="LoginHolder">
@@ -67,10 +77,11 @@
 
                     
                 <span id="allgood"></span>
-                <button onclick="LoginUser()" class="next">LOGIN</button>
                 <br>
                 <!-- <p class='shifter' onclick="LoginUse()">No account? Sign up!</p> -->
             </form>
+            <button onclick="LoginUser()" class="next">LOGIN</button>
+
 
             </div>
         </div>
@@ -81,5 +92,6 @@
 
 
     <script src="../resources/scripts/enterIn.js"></script>
+    <script src="../resources/scripts/square_background.js"></script>
 </body>
 </html>
