@@ -48,6 +48,7 @@ const CreateUser = () => {
     let password = document.getElementById('password').value;
     let password2 = document.getElementById('password2').value;
     let err = document.getElementById('passwordConfirm');
+    console.log(name, email);
     
     
         if (password===password2) {
@@ -109,21 +110,14 @@ const LoginUse = () => {
     mainBar.classList.remove('leftClass');
     mainBar.classList.add('rightClass');
 
-    let elementsToFade = document.getElementById('loginDiv');
-    elementsToFade.classList.remove('active');
-    elementsToFade.classList.add('inactive');
-    let elementsToUnFade = document.getElementById('signupDiv');
-    elementsToUnFade.classList.remove('inactive');
-    elementsToUnFade.classList.add('active');
+    // let elementsToFade = document.getElementById('loginDiv');
+    // elementsToFade.classList.remove('active');
+    // elementsToFade.classList.add('inactive');
+    // let elementsToUnFade = document.getElementById('signupDiv');
+    // elementsToUnFade.classList.remove('inactive');
+    // elementsToUnFade.classList.add('active');
 
     
-
-
-
-    
-
-
-
 
 }
 const SignUpUse = () => {
@@ -135,12 +129,12 @@ const SignUpUse = () => {
     mainBar.classList.remove('rightClass');
     mainBar.classList.add('leftClass');
 
-    let elementsToFade = document.getElementById('signupDiv');
-    elementsToFade.classList.remove('active');
-    elementsToFade.classList.add('inactive');
-    let elementsToUnFade = document.getElementById('loginDiv');
-    elementsToUnFade.classList.remove('inactive');
-    elementsToUnFade.classList.add('active');
+    // let elementsToFade = document.getElementById('signupDiv');
+    // elementsToFade.classList.remove('active');
+    // elementsToFade.classList.add('inactive');
+    // let elementsToUnFade = document.getElementById('loginDiv');
+    // elementsToUnFade.classList.remove('inactive');
+    // elementsToUnFade.classList.add('active');
 
 
 

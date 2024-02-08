@@ -25,7 +25,11 @@
 
             <div class="subContainer" id="SignupHolder">
                 <form id ='signupForm'>
-                    <h1>Login</h1>
+                    <h1>Register</h1>
+                    <div>
+                        <!-- <label for="Loginemail">Email</label><br> -->
+                        <input type="text" id="Loginname" name="name" placeholder="Name"><br>
+                    </div>
                     <div>
                         <!-- <label for="email">Email</label><br> -->
                         <input type="text" id="email" name="email" placeholder="Email"><br>
@@ -33,9 +37,7 @@
                     <div>
                         <!-- <label for="password">Password</label><br> -->
                         <input type="password" id="password" name="password" placeholder="Password"><br>
-                    </div>
-                    
-            
+                    </div>   
                     <div>
                         <!-- <label for="password2"></label><br> -->
                         <input type="password" id="password2" name="password2" placeholder="Confirm Password"><br>
@@ -44,18 +46,14 @@
                     
                 
                 <span id="passwordConfirm"></span>
-                <button onclick="CreateUser()" class="next">LOGIN</button>
+                <button onclick="CreateUser()" class="next">REGISTER</button>
                 <br>
             </form>
 
             </div>
             <div class="subContainer" id="LoginHolder">
                 <form id ='LoginForm'>
-                    <h1>Register</h1>
-                    <div>
-                        <!-- <label for="Loginemail">Email</label><br> -->
-                        <input type="text" id="Loginname" name="name" placeholder="Name"><br>
-                    </div>
+                    <h1>Login</h1>
                     <div>
                         <!-- <label for="Loginemail">Email</label><br> -->
                         <input type="text" id="Loginemail" name="email" placeholder="Email"><br>
@@ -69,7 +67,7 @@
 
                     
                 <span id="allgood"></span>
-                <button onclick="LoginUser()" class="next">REGISTER</button>
+                <button onclick="LoginUser()" class="next">LOGIN</button>
                 <br>
                 <!-- <p class='shifter' onclick="LoginUse()">No account? Sign up!</p> -->
             </form>
