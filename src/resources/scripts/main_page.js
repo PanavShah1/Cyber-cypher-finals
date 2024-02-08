@@ -1,4 +1,22 @@
 let email1 = sessionStorage.getItem('email_self');
+console.log("\nemail1 (user email) : "+email1+"\n\n");
+
+let dataDict = [];
+
+let additionalString
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const askData = () => {
@@ -25,13 +43,51 @@ const askData = () => {
 };
 
 const updateList = () => {
+    askData()
+            .then(newData => {
+                //console.log("Stringified value is: "+JSON.stringify(newData))
+                if(dataDict==JSON.stringify(newData)){
+                
+                    dataDict = JSON.stringify(newData);
+                    console.log("Stringified value is: "+dataDict);
+                }
+                    
+                
+            })
+            .catch(err => {
+                console.error('Error refreshing chat:', err);
+            });
 
 }
+
+
+// const startChatLoop = () => {
+//     refreshChatLoop = setInterval(() => {
+//         askData(email1, email2)
+//             .then(newData => {
+//                 //console.log("Stringified value is: "+JSON.stringify(newData))
+//                 if(dataDict==JSON.stringify(newData)){
+                
+//                     dataDict = JSON.stringify(newData);
+//                     updateChatScreen();
+//                 }
+                    
+                
+//             })
+//             .catch(err => {
+//                 console.error('Error refreshing chat:', err);
+//             });
+//     }, 1000);
+// };
+
+
+
+
 
 const clickChat = (emailDoc) => {
 
         let email2 = emailDoc;
-        let additionalString = document.getElementById("additionalInput").value;
+        additionalString = 'patient';
         let url = "chat.html?email1=" + encodeURIComponent(email1) + "&email2=" + encodeURIComponent(email2) + "&additional=" + encodeURIComponent(additionalString);
         window.open(url, "_blank");
         
@@ -42,6 +98,9 @@ const createDoctor = () => {
     let htmlval = '<div class="doctor-label"><img src="../resources/images/faces/face1.png" alt=""><div class="info"><p>Name : Doctor_name</p><p>Speciality : Doctor_speciality</p><p>Contact : Doctor_email</p><div class="chat"><p>Chat</p> <img src="../resources/images/send.png" alt=""></div></div></div>'
 
     const container = document.createElement('div');
+    container.addEventListener('click', ()=>{
+        clickChat("sam@gmail.com");
+    });
     container.classList.add("doctors");
     container.innerHTML = htmlval;
     // document.
