@@ -20,7 +20,7 @@ let additionalString
 
 
 const askData = () => {
-    return fetch('http://127.0.0.1:8000/chat', {
+    return fetch('http://127.0.0.1:8000/get-doctors', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -46,11 +46,11 @@ const updateList = () => {
     askData()
             .then(newData => {
                 //console.log("Stringified value is: "+JSON.stringify(newData))
-                if(dataDict==JSON.stringify(newData)){
+                // if(dataDict==JSON.stringify(newData)){
                 
                     dataDict = JSON.stringify(newData);
                     console.log("Stringified value is: "+dataDict);
-                }
+                // }
                     
                 
             })

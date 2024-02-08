@@ -19,6 +19,7 @@ body{
     /* background-color: aqua; */
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
 }
 
 .doctor-label{
@@ -65,7 +66,7 @@ body{
     cursor: pointer;
 }
 .chat img{
-    height: 20px;
+    height: 19px;
     margin-left: 20px;
 }
 button{
