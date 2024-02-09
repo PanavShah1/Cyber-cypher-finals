@@ -16,9 +16,7 @@ function getUrlParameter(name) {
 email1 = getUrlParameter('email1');
 email2 = getUrlParameter('email2');
 additionalString = getUrlParameter('additional');
-if (additionalString == "doctor"){
-    isDoc = 1;
-}
+
 // Function to set up initial data and start chat loop
 const doSetup = () => {
     // Your existing code for setting up email1, email2, and additionalString...
@@ -95,9 +93,9 @@ const updateChatScreen = () => {
         let current = dataDict[i];
         console.log("\nRN: " + current.text);
         if (current.type == 0) {
-            addTextBox(current.text, 1);
-        } else {
             addTextBox(current.text, 0);
+        } else {
+            addTextBox(current.text, 1);
         }
     }
 };
@@ -129,8 +127,7 @@ const submitText = (state) => {
         textArea.value = '';
         console.log(text);
         addTextBox(text, state);
-        if(isDoc) state = (1-state);
-        sendData(email1, email2, (1-state), text);
+        sendData(email1, email2, state, text);
         console.log("Sent data");
     }
 };
@@ -140,7 +137,7 @@ const addTextBox = (text, state) => {
     const container = document.createElement('div');
     const textVals = document.createTextNode(text);
     container.classList.add('textBubble');
-    if (state) {
+    if (state==0) {
         container.classList.add('self');
     } else {
         container.classList.add('other');

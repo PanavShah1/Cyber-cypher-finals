@@ -20,6 +20,7 @@ const LoginUser = (e) => {
                             if(data==1){
                                 console.log("Logging in")
                                 sessionStorage.setItem('email_self', email);
+                                localStorage.setItem('self_type', 'doctor');
                                 window.open("../../src/pages/main_page_doctor.html", target="_self");
                                 
                             }
@@ -87,6 +88,8 @@ const CreateUser = (e) => {
                         else if(data==0){
                             console.log("Doctor created");
                             sessionStorage.setItem('email_self', email);
+                            localStorage.setItem('self_type', 'doctor');
+                            window.open("../../src/pages/main_page_doctor.html", target="_self");
                         }
                         else console.log("Uncaught Error");
 
