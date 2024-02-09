@@ -167,7 +167,7 @@ async def chat(mydict: dict):
         sql = f"""
             CREATE TABLE `cyber_cypher`.`{place}` (
             `code` INT NOT NULL,
-            `message` VARCHAR(45) NULL);"""
+            `message` VARCHAR(500) NULL);"""
         mycursor.execute(sql)
 
     try:

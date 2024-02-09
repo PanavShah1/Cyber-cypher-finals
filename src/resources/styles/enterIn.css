@@ -31,8 +31,8 @@ body{
     height: 100vh;
     align-items: center;
     justify-content: center;
-    /* background-image: url(../images/red-yellow-background.jpg); */
-    background-color: rgb(50, 50, 50);
+    background-image: url(../images/grey-background.avif);
+    /* background-color: rgb(50, 50, 50); */
     background-size: cover;
 }
 
