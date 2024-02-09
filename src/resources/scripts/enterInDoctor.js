@@ -5,35 +5,42 @@ const LoginUser = (e) => {
     let errbox = document.getElementById('allgood');
     
     
-                    console.log('email', email, 'password', password);
-                    fetch('http://127.0.0.1:8000/login-doctor', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ 'email': email, 'password': password}),
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        
-                        if(data==1){
-                            console.log("Logging in")
-                            
-                        }
-                        else if(data==0){
-                            console.log("Incorrect password");
-                        }
-                        else console.log("Invalid credentials");
-                        errbox.innerHTML = "Invalid credentials";
-
-
-
-
+                        console.log('email', email, 'password', password);
+                        fetch('http://127.0.0.1:8000/login-doctor', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ 'email': email, 'password': password}),
                         })
-                    .catch(err => {
-                        console.log(err);
-                    });
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            
+                            if(data==1){
+                                console.log("Logging in")
+                                sessionStorage.setItem('email_self', email);
+                                window.open("../../src/pages/main_page_doctor.html", target="_self");
+                                
+                            }
+                            else if(data==0){
+                                console.log("Not found, register instead!");
+                                errbox.innerHTML = "Not found, register instead!";
+                                setTimeout(() => {
+                                    SignUpUse();
+                                }, 1000)
+                            }
+                            else{console.log("Invalid credentials");
+                            errbox.innerHTML = "Invalid credentials";
+                        }
+
+
+
+
+                            })
+                        .catch(err => {
+                            console.log(err);
+                        });
                     
                 
                 
@@ -71,10 +78,15 @@ const CreateUser = (e) => {
                         console.log(data);
                         
                         if(data==1){
-                            console.log("User exists")
+                            console.log("Doctor exists");
+                            err.innerHTML = "Doctor exists";
+                            setTimeout(() => {
+                                LoginUse();
+                            }, 1000)
                         }
                         else if(data==0){
-                            console.log("User created");
+                            console.log("Doctor created");
+                            sessionStorage.setItem('email_self', email);
                         }
                         else console.log("Uncaught Error");
 

@@ -118,9 +118,13 @@ const createDoctor = (name, email, speciality) => {
     container.addEventListener('click', ()=>{
         clickChat(email);
     });
-    container.classList.add("doctors");
+    container.classList.add("doctor-label");
     container.innerHTML = htmlval;
     // document.
     document.getElementById('docContainer').insertAdjacentElement('afterbegin', container);
 
+}
+window.onload = () =>{
+    console.log("Starting");
+    updateList();
 }
