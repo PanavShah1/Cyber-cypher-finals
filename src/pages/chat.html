@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <link rel="stylesheet" href="../resources/styles/chat.css">
+    <link rel="stylesheet" href="../resources/styles/home.css">
 </head>
 <body>
+    <div class="navbar">
+        <img src="../resources/images/logo.png" alt="">
+        <div class="right-navbar"></div>
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item" href="index.html">About</a>
+        <a class="nav-item" href="enterIn.html">Contact Doctors</a>
+        <a class="nav-item"></a>
+        <a class="login-div" href="enterIn.html">Login / Signup</a>
+    </div>
     
     <div id="textContainer">
 
@@ -16,7 +26,7 @@
     <div id="input-container">
         <textarea id="textArea"></textarea>
         <button id="submitButton" onclick="submitText(1)"><img src="../resources/images/send.png" alt=""></button>
-        <button onclick="submitText(0)">Submit Other</button>
+        <button onclick="submitText(0)">..</button>
         <!-- <button id="updateScreenButton" onclick="updateChatScreen()">Update Screen</button> -->
     </div>
 

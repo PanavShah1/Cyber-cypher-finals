@@ -59,6 +59,7 @@ button:hover{
 
 
 #textContainer{
+    margin-top: 100px;
     position: relative;
     width:100%;
     max-width: 1000px;
@@ -67,6 +68,7 @@ button:hover{
     height: 100vh;
     overflow-y: scroll;
     flex-direction: column-reverse;
+    justify-content: start ;
 }
 .textBubble{
     /* position:relative; */
