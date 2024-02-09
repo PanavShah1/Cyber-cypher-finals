@@ -26,7 +26,7 @@ body{
 }
 
 .doctor-label{
-    width: 450px;
+    width: 500px;
     border: 1px solid black;
     display: flex;
     padding: 20px;
@@ -38,8 +38,9 @@ body{
 }
 
 .doctor-label *{
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
+
 
 .doctor-label img{
     height: 100px;
@@ -56,17 +57,22 @@ body{
     border: 1px solid black;
     display: flex;
     width: 100px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     background-color: rgb(220, 220, 220);
     margin-left: 40px;
     height: 30px;
-    align-items:end; 
+    /* align-items:center;  */
     border-radius: 5px;
     padding-left: 25px;
     height: 100%;
+    margin-bottom: 0px;
+
 }
 .chat:hover{
     cursor: pointer;
+}
+.chat *{
+    margin-top: 10px;
 }
 .chat img{
     height: 19px;
