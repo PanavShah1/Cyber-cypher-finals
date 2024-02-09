@@ -112,7 +112,8 @@ const clickChat = (emailDoc) => {
 }
 
 const createDoctor = (name, email, speciality) => {
-    let htmlval = `<div class="doctor-label"><img src="../resources/images/faces/face1.png" alt=""><div class="info"><p>Name : ${name}</p><p>Speciality : ${speciality}</p><p>Contact : ${email}</p><div class="chat"><p>Chat</p> <img src="../resources/images/send.png" alt=""></div></div></div>`
+    let n = Math.floor(Math.random()*6+1)
+    let htmlval = `<div class="doctor-label"><img src="../resources/images/faces/face${n}.png" alt=""><div class="info"><p>Name : ${name}</p><p>Speciality : ${speciality}</p><p>Contact : ${email}</p><div class="chat"><p>Chat</p> <img src="../resources/images/send.png" alt=""></div></div></div>`
 
     const container = document.createElement('div');
     container.addEventListener('click', ()=>{
