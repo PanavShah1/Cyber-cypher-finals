@@ -1,0 +1,83 @@
+*{
+    border: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(220, 220, 220);
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+}
+
+#docContainer{
+    margin-top: 100px;
+    flex-direction: row;
+    /* width: 100%; */
+
+}
+
+.doctors{
+    /* background-color: aqua; */
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.doctor-label{
+    width: 500px;
+    border: 1px solid black;
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    text-wrap: wrap;
+    margin: 10px;
+}
+
+.doctor-label *{
+    margin-bottom: 10px;
+}
+
+.doctor-label img{
+    height: 100px;
+    margin-right: 50px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat{
+    border: 1px solid black;
+    display: flex;
+    width: 100px;
+    /* justify-content: space-between; */
+    background-color: rgb(220, 220, 220);
+    margin-left: 40px;
+    height: 30px;
+    /* align-items:end;  */
+    border-radius: 5px;
+    padding-left: 25px;
+    height: 100%;
+    margin-bottom: 0px;
+    /* overflow: scroll; */
+}
+.chat:hover{
+    cursor: pointer;
+}
+.chat *{
+    margin-top: 10px;
+}
+.chat img{
+    height: 19px;
+    margin-left: 20px;
+}
+button{
+    position: absolute;
+    z-index: 1;
+    background-color: aquamarine;
+}
